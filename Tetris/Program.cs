@@ -1,4 +1,4 @@
-﻿void Figure(int x, int y)
+﻿void Figure(int x, int y, char sim)
 
 {
 
@@ -14,7 +14,7 @@
 
             Console.SetCursorPosition(i, j);
 
-            Console.Write("+");
+            Console.Write(sim);
 
         }
 
@@ -26,6 +26,9 @@ int x = 10;
 
 int y = 2;
 
+char sim = '*';
+
+
 // Логика отрисовки всего
 
 new Thread(() =>
@@ -36,7 +39,7 @@ new Thread(() =>
 
     {
 
-        Figure(x, y);
+        Figure(x, y, sim);
 
         Thread.Sleep(500);
 
@@ -62,7 +65,7 @@ while (true)
 
         x--;
 
-        Figure(x, y);
+        Figure(x, y, sim);
 
     }
 
@@ -72,7 +75,7 @@ while (true)
 
         x++;
 
-        Figure(x, y);
+        Figure(x, y, sim);
 
     }
 
